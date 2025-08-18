@@ -1,0 +1,191 @@
+.toy-sort {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.sort-label {
+    font-weight: 600;
+    color: var(--gray3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.sort-select {
+    padding: 0.6em 1em;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: white;
+    color: var(--gray3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 40px;
+    min-width: 150px;
+}
+
+.sort-select:focus {
+    border-color: var(--clr1);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+.sort-select:hover {
+    border-color: var(--clr3bg);
+}
+
+.sort-select option {
+    padding: 0.5em;
+    font-size: 0.9rem;
+}
+
+/* Sort direction toggle */
+.sort-direction {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sort-direction button {
+    background: none;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 0.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--gray2);
+    min-height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sort-direction button:hover {
+    border-color: var(--clr1);
+    color: var(--clr1);
+    transform: translateY(-2px);
+}
+
+.sort-direction button.active {
+    border-color: var(--clr1);
+    background-color: var(--clr1);
+    color: var(--clr1bg);
+}
+
+.sort-direction button svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .toy-sort {
+        padding: 0.8rem 1.2rem;
+        margin-bottom: 1.2rem;
+        gap: 0.8rem;
+    }
+    
+    .sort-label {
+        font-size: 0.85rem;
+    }
+    
+    .sort-select {
+        padding: 0.5em 0.8em;
+        font-size: 0.85rem;
+        min-height: 36px;
+        min-width: 120px;
+    }
+    
+    .sort-direction button {
+        padding: 0.4em;
+        min-height: 36px;
+        min-width: 36px;
+    }
+    
+    .sort-direction button svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .toy-sort {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 0.6rem;
+    }
+    
+    .sort-label {
+        text-align: center;
+    }
+    
+    .sort-select {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .sort-direction {
+        justify-content: center;
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .toy-sort {
+        padding: 0.6rem 1rem;
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+    }
+    
+    .sort-label {
+        font-size: 0.8rem;
+    }
+    
+    .sort-select {
+        padding: 0.4em 0.7em;
+        font-size: 0.8rem;
+        min-height: 32px;
+    }
+    
+    .sort-direction button {
+        padding: 0.3em;
+        min-height: 32px;
+        min-width: 32px;
+    }
+    
+    .sort-direction button svg {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Sort animations */
+.toy-sort {
+    animation: slideDown 0.4s ease-out;
+}
+
+.sort-select:focus {
+    animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

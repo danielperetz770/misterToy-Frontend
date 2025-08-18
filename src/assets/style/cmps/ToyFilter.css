@@ -1,0 +1,178 @@
+.toy-filter {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.toy-filter h3 {
+    margin-bottom: 1rem;
+    color: var(--gray3);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.filter-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--gray3);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 0.8em 1em;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    min-height: 44px;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    border-color: var(--clr1);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-actions button {
+    padding: 0.8em 1.5em;
+    font-size: 0.9rem;
+    min-height: 44px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.filter-actions .apply-filters {
+    background: linear-gradient(135deg, var(--clr1), var(--clr3bg));
+    color: var(--clr1bg);
+}
+
+.filter-actions .apply-filters:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.filter-actions .clear-filters {
+    background-color: var(--gray2);
+    color: white;
+}
+
+.filter-actions .clear-filters:hover {
+    background-color: var(--gray3);
+    transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .toy-filter {
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .filter-form {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .filter-group input,
+    .filter-group select {
+        padding: 0.7em 0.8em;
+        font-size: 0.85rem;
+        min-height: 40px;
+    }
+    
+    .filter-actions {
+        gap: 0.8rem;
+        margin-top: 0.8rem;
+    }
+    
+    .filter-actions button {
+        padding: 0.7em 1.2em;
+        font-size: 0.85rem;
+        min-height: 40px;
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .toy-filter {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .toy-filter h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .filter-form {
+        gap: 0.6rem;
+    }
+    
+    .filter-group label {
+        font-size: 0.8rem;
+    }
+    
+    .filter-group input,
+    .filter-group select {
+        padding: 0.6em 0.7em;
+        font-size: 0.8rem;
+        min-height: 36px;
+    }
+    
+    .filter-actions {
+        gap: 0.6rem;
+        margin-top: 0.6rem;
+    }
+    
+    .filter-actions button {
+        padding: 0.6em 1em;
+        font-size: 0.8rem;
+        min-height: 36px;
+    }
+}
+
+/* Filter animations */
+.filter-form {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}

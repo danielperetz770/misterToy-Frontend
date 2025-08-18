@@ -1,0 +1,158 @@
+/* Setup */
+@import 'setup/vars.css';
+@import 'setup/typography.css';
+@import 'setup/animations.css';
+
+/* Base */
+@import 'base/base.css';
+@import 'base/helpers.css';
+@import 'base/layout.css';
+@import 'base/forms.css';
+
+/* Components */
+@import 'cmps/Loader.css';
+@import 'cmps/AppHeader.css';
+@import 'cmps/AppFooter.css';
+@import 'cmps/ToyList.css';
+@import 'cmps/ToyPreview.css';
+@import 'cmps/ToyFilter.css';
+@import 'cmps/ToySort.css';
+@import 'cmps/UserMsg.css';
+@import 'cmps/Popup.css';
+@import 'cmps/ToyImg.css';
+
+/* Pages */
+@import 'pages/Dashboard.css';
+
+/* Main app layout */
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.app > * {
+    width: 100%;
+}
+
+main {
+    flex-grow: 1;
+    padding: 1rem 0;
+}
+
+/* Global responsive container */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        padding: 0 0.5rem;
+    }
+    
+    main {
+        padding: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-container {
+        padding: 0 0.25rem;
+    }
+    
+    main {
+        padding: 0.25rem 0;
+    }
+}
+
+/* Global page transitions */
+.page-enter {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 300ms, transform 300ms;
+}
+
+/* Global loading states */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Global scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--clr1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--clr3bg);
+}
+
+/* Global focus styles for accessibility */
+*:focus {
+    outline: 2px solid var(--clr1);
+    outline-offset: 2px;
+}
+
+/* Global selection styles */
+::selection {
+    background-color: var(--clr1);
+    color: var(--clr1bg);
+}
+
+/* Global print styles */
+@media print {
+    .app-header,
+    .app-footer,
+    .mobile-menu-toggle,
+    .filter-actions,
+    .popup-overlay {
+        display: none !important;
+    }
+    
+    .app {
+        background: white !important;
+    }
+    
+    .toy-preview {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+}

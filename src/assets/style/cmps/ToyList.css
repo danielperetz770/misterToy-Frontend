@@ -1,0 +1,109 @@
+.toy-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.toy-list li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--clr3bg);
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-height: 200px;
+}
+
+.toy-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1200px) {
+    .toy-list {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .toy-list {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1rem;
+        margin: 0.8rem 0;
+    }
+    
+    .toy-list li {
+        padding: 0.8rem;
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .toy-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 0.8rem;
+    }
+    
+    .toy-list li {
+        padding: 0.7rem;
+        min-height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .toy-list {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin: 0.5rem 0;
+    }
+    
+    .toy-list li {
+        padding: 0.6rem;
+        min-height: auto;
+    }
+}
+
+/* Empty state */
+.toy-list:empty::before {
+    content: "No toys found. Try adjusting your filters!";
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    color: var(--gray2);
+    font-style: italic;
+    grid-column: 1 / -1;
+}
+
+/* Loading state */
+.toy-list.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.toy-list.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+    border: 3px solid var(--clr1);
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+

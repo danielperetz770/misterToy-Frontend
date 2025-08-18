@@ -1,0 +1,45 @@
+.main-layout {
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 1rem;
+  margin: auto;
+  width: 100%;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .main-layout {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .container {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-layout {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  
+  .container {
+    padding: 0.25rem;
+  }
+}
+
+footer {
+  background-color: var(--clr1);
+  color: var(--clr1bg);
+  padding: 1em;
+  text-align: center;
+}
+
+
