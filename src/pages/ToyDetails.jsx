@@ -4,7 +4,7 @@ import { toyService } from "../services/toy.service.js"
 
 import { Loader } from '../cmps/Loader.jsx'
 import { ToyImg } from '../cmps/ToyImg'
-import { Chat } from '../cmps/Chat'
+import { Chat } from '../pages/Chat'
 import { Popup } from '../cmps/Popup'
 
 export function ToyDetails() {

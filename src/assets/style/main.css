@@ -23,6 +23,10 @@
 
 /* Pages */
 @import 'pages/Dashboard.css';
+@import 'pages/HomePage.css';
+@import 'pages/AboutUs.css';
+@import 'pages/Auth.css';
+@import 'pages/ToyDetails.css';
 
 /* Main app layout */
 .app {

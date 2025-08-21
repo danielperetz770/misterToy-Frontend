@@ -1,0 +1,285 @@
+.login-page {
+    padding: var(--spacing-2xl) 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    display: flex;
+    align-items: center;
+}
+
+.auth-tabs {
+    display: inline-flex;
+    gap: var(--spacing-sm);
+    background: var(--bg-primary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xs);
+    box-shadow: 0 10px 30px var(--shadow-light);
+    margin-bottom: var(--spacing-xl);
+}
+
+.auth-tabs a {
+    padding: 0.8em 1.5em;
+    border-radius: var(--radius-lg);
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-tabs a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.auth-tabs a:hover::before {
+    left: 100%;
+}
+
+.auth-tabs a.active {
+    background: var(--clr1);
+    color: var(--clr1bg);
+    box-shadow: 0 4px 15px rgba(251, 255, 16, 0.3);
+}
+
+.auth-content {
+    margin-top: var(--spacing-xl);
+    max-width: 480px;
+    width: 100%;
+}
+
+.login-form,
+.signup-form {
+    display: grid;
+    gap: var(--spacing-lg);
+    background: var(--bg-primary);
+    padding: var(--spacing-2xl);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 20px 40px var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-form::before,
+.signup-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--clr1), var(--clr1bg), var(--clr3bg));
+}
+
+.login-form button,
+.signup-form button {
+    margin: 0;
+    background: var(--clr1);
+    color: var(--clr1bg);
+    border: 2px solid var(--clr1);
+    font-weight: 600;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    transition: all var(--transition-normal);
+}
+
+.login-form button:hover,
+.signup-form button:hover {
+    background: var(--clr1bg);
+    color: var(--clr1);
+    border-color: var(--clr1bg);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(251, 255, 16, 0.3);
+}
+
+/* Form Input Enhancements */
+.login-form input,
+.signup-form input {
+    border: 2px solid var(--border-light);
+    background: var(--bg-primary);
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.login-form input:focus,
+.signup-form input:focus {
+    border-color: var(--clr1);
+    background: var(--bg-primary);
+    box-shadow: 0 0 0 3px rgba(251, 255, 16, 0.1);
+    transform: translateY(-1px);
+}
+
+.login-form input::placeholder,
+.signup-form input::placeholder {
+    color: var(--text-muted);
+    transition: all var(--transition-normal);
+}
+
+.login-form input:focus::placeholder,
+.signup-form input:focus::placeholder {
+    opacity: 0.7;
+    transform: translateX(5px);
+}
+
+/* Form Labels (if we add them later) */
+.form-group {
+    position: relative;
+}
+
+.form-group label {
+    position: absolute;
+    top: -0.5rem;
+    left: 1rem;
+    background: var(--bg-primary);
+    padding: 0 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all var(--transition-normal);
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    color: var(--clr1);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Button States */
+.btn-primary {
+    background: var(--clr1);
+    color: var(--clr1bg);
+    border: 2px solid var(--clr1);
+}
+
+.btn-primary:hover {
+    background: var(--clr1bg);
+    color: var(--clr1);
+    border-color: var(--clr1bg);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--clr1bg);
+    border: 2px solid var(--clr1bg);
+}
+
+.btn-secondary:hover {
+    background: var(--clr1bg);
+    color: var(--clr1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-page {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .auth-content {
+        margin-top: var(--spacing-lg);
+        max-width: 100%;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .login-form,
+    .signup-form {
+        padding: var(--spacing-xl);
+    }
+    
+    .auth-tabs {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .auth-tabs a {
+        padding: 0.7em 1.2em;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-page {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .auth-content {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .login-form,
+    .signup-form {
+        padding: var(--spacing-lg);
+        gap: var(--spacing-md);
+    }
+    
+    .auth-tabs a {
+        padding: 0.6em 1em;
+        font-size: 0.85rem;
+    }
+    
+    .login-form button,
+    .signup-form button {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Animation for form appearance */
+@keyframes formSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-form,
+.signup-form {
+    animation: formSlideIn 0.6s ease-out;
+}
+
+/* Enhanced focus states for accessibility */
+.login-form input:focus,
+.signup-form input:focus,
+.login-form button:focus,
+.signup-form button:focus {
+    outline: 2px solid var(--clr1);
+    outline-offset: 2px;
+}
+
+/* Loading state for buttons */
+.btn-loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+

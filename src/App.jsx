@@ -12,6 +12,9 @@ import { ToyDetails } from './pages/ToyDetails.jsx'
 import { Dashboard } from './pages/Dashboard.jsx'
 import { AppHeader } from './cmps/AppHeader.jsx'
 import { AppFooter } from './cmps/AppFooter.jsx'
+import { AdminIndex } from './pages/AdminIndex.jsx'
+import { Login, LoginSignup, Signup } from './cmps/LoginSignup.jsx'
+import { UserDetails } from './pages/UserDetails.jsx'
 
 
 
@@ -31,6 +34,15 @@ function App() {
               <Route element={<ToyEdit />} path="/toy/edit" />
               <Route element={<ToyEdit />} path="/toy/edit/:toyId" />
               <Route element={<ToyDetails />} path="/toy/:toyId" />
+              <Route element={<UserDetails />} path="user/:id" />
+
+
+              <Route path="admin" element={<AdminIndex />} />
+              <Route path="auth" element={<LoginSignup />}>
+                <Route path="login" element={<Login />} />
+                <Route path="signup" element={<Signup />} />
+              </Route>
+
             </Routes>
           </main>
           <AppFooter />

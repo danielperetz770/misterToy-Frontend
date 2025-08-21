@@ -1,0 +1,21 @@
+.toy-details {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl) 0;
+}
+
+.toy-details .btn {
+  margin: 0 var(--spacing-xs);
+}
+
+.toy-details h1 span,
+.toy-details p span {
+  color: var(--text-secondary);
+}
+
+.toy-details .green { color: var(--success); }
+.toy-details .red { color: var(--error); }
+
+
